@@ -1,0 +1,30 @@
+ALGORITHM sum_of_overlapping_elements
+VAR
+    set1 : ARRAY_OF INTEGER[length];
+    set2 : ARRAY_OF INTEGER[length];
+    tab : ARRAY_OF INTEGER[length];
+    sum : INTEGER :=0;
+    i,j,k : INTEGER;
+    find : BOOLEAN;
+BEGIN
+    FOR i FROM 0 TO set1.length-1 DO
+    find = FALSE;
+    j:=0;
+    k:=0;
+    WHILE (find = FALSE AND j <= set2.length-1) DO
+        IF (set1[i]=set2[j]) THEN
+        find=TRUE
+        ELSE 
+        J++;
+        END_IF
+        IF find = TRUE
+        tab[k]:=set1[i];
+        k++;
+        END_IF
+    END_WHILE
+        FOR i FROM 0 TO tab.length-1 DO
+            sum:= sum+tab[i];
+        END_FOR
+        sum:= sum*2;
+    Write ('the sum of all distinct elements is'; sum)
+END
